@@ -1,0 +1,498 @@
+#################################################################
+# KEYBOARD BINDINGS FOR ANY TWM
+#################################################################
+
+# Userdefined
+ctrl + super + shift + q
+    shutdown now
+
+#Reboot
+ctrl + super + shift + r
+    reboot
+
+#Sleep:
+ctrl + super + shift + x
+    /home/nh/.config/qtile/scripts/sleep.sh
+
+#Sleep:
+ctrl + super + shift + h
+    /home/nh/.config/qtile/scripts/hibernate.sh
+
+#################################################################
+# SUPER + FUNCTION KEYS
+#################################################################
+
+#Sublime Text 4
+super + s
+    subl
+
+#Rofi
+super + F2
+    rofi -show drun
+
+super + F1
+    dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'JetBrainsMono NFM:bold:pixelsize=14'
+
+#################################################################
+# SUPER + ... KEYS
+#################################################################
+
+#qutebrowser
+super + c
+    qutebrowser
+#Brave
+super + b
+    brave
+#thunar
+super + e
+    thunar
+
+#Browser
+super + w
+    firefox
+
+#Conky-toggle
+#super + shift + c
+#    conky-toggle
+
+#killall conky
+super + ctrl + c
+    killall conky
+
+#Htop
+#super + h
+#    alacritty 'htop task manager' -e htop
+
+#lock
+super + x
+    slock
+
+#Rofi theme selector
+super + r
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.local/share/rofi/themes/rounded-nord-dark.rasi
+
+# copyQ
+super + v
+    copyq menu
+
+#Pragha
+super + m
+    pragha
+
+#alacritty
+super + Return
+    alacritty
+
+#Xkill
+super + Escape
+    xkill
+
+#Keyboard dependent
+#alacritty
+super + KP_Enter
+	st
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#Alternate terminal
+super + shift + Return
+	st
+
+#Keyboard dependent
+#kitty
+super + shift + KP_Enter
+	st
+
+#dmenu
+super + shift + d
+	dmenu_run -i -nb '#191919' -nf '#fa46fa' -sb '#4287f5' -sf '#2ffaf0' -fn 'JetBrainsMono NFM:bold:pixelsize=14'
+    
+#dmenu
+super + d
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/rofi/launcher2.rasi
+
+#reload sxhkd:
+super + shift + alt + r
+	pkill -USR1 -x sxhkd
+
+
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+#arcolinux-welcome-app
+ctrl + alt + w
+     arcolinux-welcome-app
+
+#archlinux-tweak-tool
+ctrl + alt + e
+    archlinux-tweak-tool
+
+#conky-rotate
+ctrl + alt + Next
+     conky-rotate -n
+
+#conky-rotate
+ctrl + alt + Prior
+    conky-rotate -p
+
+#File-Manager
+ctrl + alt + b
+     thunar
+
+#Catfish
+ctrl + alt + c
+     catfish
+
+#Chromium
+ctrl + alt + g
+    google-chrome-stable -no-default-browser-check
+
+#Firefox
+ctrl + alt + f
+     firefox
+
+#Nitrogen
+ctrl + alt + i
+     nitrogen
+
+#archlinux-logout
+ctrl + alt + k
+     archlinux-logout
+
+#archlinux-logout
+ctrl + alt + l
+    archlinux-logout
+
+#Pamac-manager
+ctrl + alt + p
+    pamac-manager
+
+#Xfce4-settings-manager
+ctrl + alt + m
+     xfce4-settings-manager
+
+#Pulse Audio Control
+ctrl + alt + u
+     librewolf
+
+#Rofi theme selector
+ctrl + alt + r
+  rofi-theme-selector
+
+#Spotify
+ctrl + alt + s
+   spotify
+
+#alacritty
+ctrl + alt + Return
+    alacritty
+
+#alacritty
+ctrl + alt + t
+    alacritty
+
+#Vivaldi
+ctrl + alt + v
+    vivaldi-stable
+
+#Rofi Fullscreen
+ctrl + alt + a
+    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+
+    
+
+#Keyboard dependent
+#alacritty
+#ctrl + alt + KP_Enter
+#     alacritty
+
+
+#################################################################
+# ALT + ... KEYS
+#################################################################
+
+
+
+
+#################################################################
+#VARIETY KEYS WITH PYWAL
+#################################################################
+
+#Wallpaper trash
+alt + shift + t
+    variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper next
+alt + shift + n
+    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper previous
+alt + shift + p
+    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper favorite
+alt + shift + f
+    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper update
+alt + shift + u
+    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper trash
+alt + t
+    variety -t
+
+#Wallpaper next
+alt + n
+    variety -n
+
+#Wallpaper previous
+alt + p
+    variety -p
+
+#Wallpaper favorite
+alt + f
+    variety -f
+
+#Wallpaper previous
+alt + Left
+    variety -p
+
+#Wallpaper next
+alt + Right
+    variety -n
+
+#Wallpaper toggle-pause
+alt + Up
+    variety --toggle-pause
+
+#Wallpaper resume
+alt + Down
+    variety --resume
+
+#################################################################
+# CONTROL + SHIFT KEYS
+#################################################################
+
+#Xcfe4-TaskManager
+#ctrl + shift + Escape
+#    btop
+
+
+#################################################################
+#     SCREENSHOTS
+#################################################################
+
+#Scrot
+Print
+    flameshot gui
+#    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+alt + Print
+    maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
+
+super + Print
+    maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
+
+shift + Print
+    maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
+
+#on the go:
+super + shift + s
+    maim --format=png --select | xclip -selection clipboard -t image/png
+
+#Entire Screen Clipboard
+ctrl + Print
+      maim --format=png | xclip -selection clipboard -t image/png
+
+# Active window clipboard
+ctrl + super + Print
+     maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+#Area Clipboard
+ctrl + shift + Print
+     maim --format=png --select | xclip -selection clipboard -t image/png
+
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+#xfce4-terminal dropdown
+#F12
+#    xfce4-terminal --drop-down
+
+
+#################################################################
+#     MULTIMEDIA KEYS
+#################################################################
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#Playerctl works for Pragha, Spotify and others
+#Delete the line for playerctl if you want to use mpc
+#and replace it with the corresponding code
+#mpc works for e.g.ncmpcpp
+#mpc toggle
+#mpc next
+#mpc prev
+#mpc stop
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+#########################
+#        POLYBAR        #
+#########################
+
+# Qtile has its own bar
+#Hide polybar
+#super + y
+#    polybar-msg cmd toggle
+
+
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/qtile/scripts/picom-toggle.sh
+
+#################################################################
+# SUPER + KEYS
+#################################################################
+
+#Toggle fullscreen of window
+#super + f
+#    qtile-cmd -o window -f toggle_fullscreen
+
+# normalize layout (undo size changes)
+#super + n
+#    qtile-cmd -o layout -f normalize
+
+#kill
+#super + q
+#    qtile-cmd -o window -f kill
+
+# Foucs WINDOW (Navigate)
+#super + {Left,Down,Up,Right}
+#    qtile-cmd -o layout -f {left,down,up,right}
+
+# Foucs WINDOW (Navigate)
+#super + {h,j,k,l}
+#    qtile-cmd -o layout -f {left,down,up,right}
+
+#################################################################
+# SUPER KEYS
+#################################################################
+
+#Focus selected desktop
+#super + Tab
+#    qtile-cmd -o screen -f next_group
+
+# set the window state
+#super + space
+#    qtile-cmd -o cmd -f next_layout
+
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#kill
+#super + shift + q
+#    qtile-cmd -o window -f kill
+
+#Quit Qtile
+#super + shift + x
+#    qtile-cmd -o cmd -f shutdown
+
+# FLIP LAYOUT FOR MONADTALL/MONADWIDE
+#super + shift + f
+#    qtile-cmd -o layout -f flip
+
+# MOVE WINDOWS UP OR DOWN BSP LAYOUT
+
+#super + shift + {h,j,k,l}
+#    qtile-cmd -o layout -f {shuffle_left,shuffle_down,shuffle_up,shuffle_right}
+
+# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
+
+#super + shift + {Up,Down,Left,Right}
+#    qtile-cmd -o layout -f {shuffle_up,shuffle_down,swap_left,swap_right}
+
+# TOGGLE FLOATING LAYOUT
+#super + shift + space
+#    qtile-cmd -o window -f toggle_floating
+
+#Reload Qtile
+#super + shift + r
+#    qtile-cmd -o cmd -f restart
+
+
+#################################################################
+# SUPER + ALT KEYS
+#################################################################
+
+# FLIP LAYOUT FOR BSP
+
+#super + alt + {h,j,k,l}
+#    qtile-cmd -o layout -f {flip_left,flip_down,flip_up,flip_right}
+
+
+##################################
+## The RESIZE KEYS ARE RESERVED ##
+##  ~/.config/qtile/config.py   ##
+##      Lines 191 - 235         ##
+##################################
+## RESIZE UP, DOWN, LEFT, RIGHT ##
+#super + control + l
+#super + control + Right
+#super + control + h
+#super + control + Left
+#super + control + k
+#super + control + Up
+#super + control + j
+#super + control + Down
+##################################
