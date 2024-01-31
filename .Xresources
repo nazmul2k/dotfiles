@@ -1,3 +1,4 @@
+! ST terminal configs
 Xft.antialias:	1
 Xft.hinting:	1
 Xft.autohint:	0
@@ -5,7 +6,11 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
-st.font: JetBrainsMono Nerd Font:style:medium:pixelsize=14
+st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=14
+
+
+! window padding
+st.borderpx: 0
 
 !- 0.1 to 0.9 = transparency
 st.alpha: 0.8
@@ -92,7 +97,7 @@ URxvt.colorUL:      	 #87afd7
 !!! begin
 
 ! special
-*.foreground:   #F9F9F9
+!*.foreground:   #F9F9F9
 
 URxvt.foreground:   #F9F9F9
 URxvt.background:   [80]#222222
@@ -143,11 +148,11 @@ URxvt.background:   [80]#222222
 
 ! fonts
 URxvt.letterSpace: 	    		-1
-URxvt.font:                 	xft:Monospace:regular:size=11
-URxvt.imFont:               	xft:Monospace:regular:size=11
-URxvt.italicFont:           	xft:Monospace:italic:size=11
-URxvt.boldFont:             	xft:Monospace:bold:size=11
-URxvt.boldItalicFont:     		xft:Monospace:regular:size=11
+URxvt.font:                 	xft:CaskaydiaCove Nerd Font:regular:size=11
+URxvt.imFont:               	xft:CaskaydiaCove Nerd Font:regular:size=11
+URxvt.italicFont:           	xft:CaskaydiaCove Nerd Font:italic:size=11
+URxvt.boldFont:             	xft:CaskaydiaCove Nerd Font:bold:size=11
+URxvt.boldItalicFont:     		xft:CaskaydiaCove Nerd Font:regular:size=11
 ! run :.!fc-list | grep <font-name>
 
 ! perl extensions
@@ -193,7 +198,7 @@ URxvt.keysym.Control-Shift-V: perl:clipboard:paste
 ! xterm standard arcolinux theme
 ! ------------------------------------------------------------------------------
 
-xterm*faceName: Monospace
+xterm*faceName: CaskaydiaCove Nerd Font
 xterm*faceSize: 11
 xterm*loginShell: true
 xterm*vt100*geometry: 100x30
@@ -236,7 +241,7 @@ UXTerm*termName: xterm-256color
 
 UXTerm*cursorColor:        #c8c8c8
 UXTerm*VT100.geometry:     100x30
-UXTerm*font:               Monospace
+UXTerm*font:               CaskaydiaCove Nerd Font
 UXTerm*faceSize:		   11
 UXTerm*dynamicColors:      true
 UXTerm*utf8:               2
