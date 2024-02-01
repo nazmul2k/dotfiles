@@ -117,16 +117,16 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 ################# menu's in arcolinux
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'JetBrainsMono NF:bold:pixelsize=14'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fa46fa' -sb '#4287f5' -sf '#2ffaf0' -fn 'JetBrainsMono NFM:bold:pixelsize=14'
 
 # start rofi
 bindsym $mod+d exec --no-startup-id ~/.config/i3/launcher/launcher.sh
 
 # start xfce4-appfinder
-bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
+bindsym mod1+F2 exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme /home/nh/.local/share/rofi/themes/catppuccin-mocha.rasi
 
 # start xfce-appfinder
-bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
+bindsym mod1+F3 exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme /home/nh/.local/share/rofi/themes/catppuccin-frappe.rasi
 
 # start xlunch app launcher
 # bindsym mod1+F5 exec --no-startup-id xlunch --config ~/.config/xlunch/default.conf --input ~/.config/xlunch/entries.dsv
@@ -358,20 +358,6 @@ exec_always --no-startup-id autotiling
 # exec --no-startup-id vivaldi-stable
 for_window [class="Vivaldi-stable"] focus
 
-# Text-editor
-# exec --no-startup-id geany
-# exec --no-startup-id atom
-
-# File manager
-# exec --no-startup-id thunar
-
-# Mail clients
-# exec --no-startup-id evolution
-
-# Music
-# exec --no-startup-id spotify
-for_window [class="Spotify"] focus
-
 # TRAY APPLICATIONS
 
 # applications that are not installed will not start
@@ -392,12 +378,6 @@ exec --no-startup-id nm-applet
 # num lock activated
 exec_always --no-startup-id numlockx on
 
-# dropbox
-# exec --no-startup-id dropbox start
-
-# insync
-exec --no-startup-id st -e tmux &
-exec --no-startup-id alacritty --class 'laptopmon,laptopmon' --hold -e btop &
 # volume
 # exec --no-startup-id pasystray
 
@@ -406,10 +386,6 @@ exec --no-startup-id variety &
 
 ################# system applications       
 
-exec --no-startup-id xfce4-power-manager &
-# ommitted next line to get super key to bring up the menu in xfce and avoid error then in i3
-# IF xfsettingsd is activated you can not change themes
-# exec --no-startup-id xfsettingsd &
 exec --no-startup-id dunst &
 
 ################# applications keyboard shortcuts  
@@ -848,3 +824,6 @@ bar {
 
 # get the mouse out of the way with unclutter
 # exec --no-startup-id unclutter
+
+exec --no-startup-id st -e tmux &
+exec --no-startup-id alacritty --class 'laptopmon,laptopmon' -e btop &
