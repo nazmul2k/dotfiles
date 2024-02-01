@@ -1,6 +1,6 @@
 ### EXPORT ###
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='nvim'
+export VISUAL='geany'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 
@@ -412,7 +412,14 @@ neofetch
 #sysinfo-retro
 #cpufetch
 #colorscript random
+#hyfetch
 
 
 # Personal Aliases
 alias gpumon="sudo intel_gpu_top"
+alias v=nvim
+alias gcl="git clone"
+alias r=ranger
+alias t=tmux
+alias ta="tmux attach"
+alias tn="tmux new"
