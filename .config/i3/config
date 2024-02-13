@@ -346,7 +346,7 @@ font pango:JetBrainsMono NF Regular 12
 # USER APPLICATIONS TO START AT BOOT
 
 # ArcoLinux Welcome App
-exec --no-startup-id megasync &
+exec --no-startup-id st -e tmux &
 exec --no-startup-id copyq &
 
 bindsym $mod+v exec copyq menu
@@ -370,7 +370,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 
 # bluetooth
-exec --no-startup-id blueberry-tray
+# exec --no-startup-id blueberry-tray
 
 # network
 exec --no-startup-id nm-applet
@@ -393,7 +393,7 @@ exec --no-startup-id dunst &
 # not workspace related
 
 # ArcoLinux Welcome App
-bindsym control+mod1+w exec "flatpak run one.ablaze.floorp"
+bindsym control+mod1+w exec floorp
 
 # ArchLinux Tweak Tool
 bindsym control+mod1+e exec --no-startup-id archlinux-tweak-tool
@@ -458,8 +458,7 @@ bindsym control+mod1+v exec --no-startup-id vivaldi-stable;focus
 bindsym control+mod1+g exec --no-startup-id chromium;focus
 
 # Text Editor
-# bindsym $mod+F2 exec --no-startup-id geany;focus
-bindsym $mod+F2 exec --no-startup-id geany;focus
+bindsym $mod+F2 exec --no-startup-id subl
 
 # Basic Draw Tool
 bindsym $mod+F3 exec --no-startup-id inkscape;focus
@@ -488,11 +487,8 @@ bindsym control+mod1+b exec librewolf
 bindsym $mod+F9 exec --no-startup-id evolution;focus
 
 
-################# screenshots                      
+######### Screenshots ########
 
-#bindsym Print exec --no-startup-id scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-#bindsym Control+Print exec --no-startup-id xfce4-screenshooter
-#bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 
 
@@ -505,7 +501,7 @@ bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER
 bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
-# bindsym shift+Print exec --no-startup-id shutter
+# bindsym mod1+Print exec --no-startup-id shutter
 
 ################# floating or tiled rules         
 # Move to some workspaces
@@ -518,7 +514,7 @@ for_window [class="Arcolinux-calamares-tool.py"] floating enable
 for_window [class="Bleachbit"] floating disable
 for_window [class="Blueberry.py"] floating enable
 for_window [class="Brasero"] floating disable
-for_window [class="Galculator"] floating enable
+for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Gnome-disks"] floating disable
 for_window [class="^Gnome-font-viewer$"] floating enable
 for_window [class="^Gpick$"] floating enable
@@ -614,9 +610,9 @@ bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
 # changing border style
 # super+t in arcolinux is starting terminal
-# bindsym $mod+t border normal
-# bindsym $mod+y border pixel 2
-# bindsym $mod+u border none
+bindsym $mod+t border normal
+bindsym $mod+y border pixel 2
+bindsym $mod+u border none
 
 # new_window pixel 1
 new_window normal
@@ -702,7 +698,7 @@ bar {
 
 	# system icons
     # tray_output none
-    # tray_output $firstMonitor
+    tray_output $firstMonitor
     # tray_output $secondMonitor
 
     # OPTION 1 : i3status
@@ -713,34 +709,6 @@ bar {
 
 	# status_command i3status
     status_command i3status -c ~/.config/i3/i3status.conf
-
-    # OPTION 2 : i3blocks
-
-    # https://github.com/vivien/i3blocks
-    # another way to provide text in the statusbar
-    # put hastag in front if not installed
-
-    # status_command i3blocks
-    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-
-
-    # OPTION 3 : conky
-
-    # You can also replace the istatus bar with a conky
-    # start-conky-i3statusbar.sh is started and conky will follow
-    # documentation : https://i3wm.org/docs/user-contributed/conky-i3bar.html
-    # conky configuration is in conky-i3statusbar
-
-	# status_command ~/.config/i3/start-conky-i3statusbar.sh
-
-    # OPTION 4 : polybar
-
-    # polybar is launched elsewhere - search for the word
-    # from the opening of the "bar {...}" till the end has to go or hashtagged out
-    # in order for the system trayicons to show up in polybar
 
     ##START THEMING BAR
     # Theme name : ArcoLinux Default
@@ -824,6 +792,4 @@ bar {
 
 # get the mouse out of the way with unclutter
 # exec --no-startup-id unclutter
-
-exec --no-startup-id st -e tmux &
 exec --no-startup-id alacritty --class 'laptopmon,laptopmon' -e btop &
