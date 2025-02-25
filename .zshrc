@@ -109,7 +109,5 @@ alias r=ranger
 alias t=tmux
 alias ta="tmux attach"
 alias tn="tmux new"
-alias ssn="sudo shutdown now"
-alias rb="sudo systemctl reboot"
 alias mouse="/home/nh/.config/dwm/scripts/mouseaccel.sh"
 alias ssp="systemctl suspend ; slock"
